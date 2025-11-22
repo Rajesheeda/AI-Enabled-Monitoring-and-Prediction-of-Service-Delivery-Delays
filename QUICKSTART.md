@@ -9,7 +9,7 @@
 
 1. **Clone the repository** (if not already done):
 ```bash
-cd AI-Enabled-Monitoring-and-Prediction-of-Service-Delivery-Delays
+cd AI-Prediction-Service-Delivery-Delays
 ```
 
 2. **Create a virtual environment**:

@@ -16,7 +16,7 @@ setup(
     description="AI-powered system to monitor and predict service delivery delays",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/your-org/AI-Enabled-Monitoring-and-Prediction-of-Service-Delivery-Delays",
+    url="https://github.com/your-org/AI-Prediction-Service-Delivery-Delays",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 4 - Beta",

@@ -41,7 +41,7 @@ This project implements a comprehensive AI-powered system to monitor and predict
 ## Project Structure
 
 ```
-AI-Enabled-Monitoring-and-Prediction-of-Service-Delivery-Delays/
+AI-Prediction-Service-Delivery-Delays/
 ├── app/                          # Main application
 │   ├── api/                     # FastAPI endpoints
 │   │   ├── main.py             # API application entry point

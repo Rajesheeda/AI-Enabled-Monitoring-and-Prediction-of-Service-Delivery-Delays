@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Optional, List, Dict
+from typing import Optional, List, Dict, Any
 from pydantic import BaseModel, Field
 
 
@@ -57,7 +57,7 @@ class ServiceMetrics(BaseModel):
 
 class RootCauseAnalysis(BaseModel):
     """Root cause analysis results"""
-    primary_causes: List[Dict[str, any]] = Field(..., description="Top root causes")
+    primary_causes: List[Dict[str, Any]] = Field(..., description="Top root causes")
     stage_bottlenecks: List[StageDelayMetrics] = Field(..., description="Bottleneck stages")
     district_hotspots: List[DistrictMetrics] = Field(..., description="High-delay districts")
     service_trends: List[ServiceMetrics] = Field(..., description="Service-level trends")
@@ -93,7 +93,7 @@ class AnalyticsResponse(BaseModel):
     overall_sla_compliance: float
     average_tat_hours: float
     root_cause_analysis: RootCauseAnalysis
-    trends: Dict[str, any] = {}
+    trends: Dict[str, Any] = {}
     generated_at: datetime
     
     class Config:

@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Optional, List, Dict
+from typing import Optional, List, Dict, Any
 from pydantic import BaseModel, Field
 
 
@@ -67,7 +67,7 @@ class PredictionResponse(BaseModel):
     low_risk_count: int
     generated_at: datetime
     model_version: str
-    summary: Dict[str, any] = {}
+    summary: Dict[str, Any] = {}
     
     class Config:
         json_schema_extra = {

@@ -60,7 +60,7 @@ This system provides:
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd AI-Enabled-Monitoring-and-Prediction-of-Service-Delivery-Delays
+cd AI-Prediction-Service-Delivery-Delays
 ```
 
 2. Create a virtual environment:
