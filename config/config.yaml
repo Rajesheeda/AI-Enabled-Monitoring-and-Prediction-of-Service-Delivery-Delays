@@ -1,0 +1,92 @@
+# Application Configuration
+
+app:
+  name: "GSWS SLA Monitoring System"
+  version: "1.0.0"
+  debug: false
+
+# API Configuration
+api:
+  host: "0.0.0.0"
+  port: 8000
+  reload: true
+  workers: 4
+
+# Database Configuration
+database:
+  url: "sqlite:///./data/gsws_sla.db"
+  echo: false
+
+# ML Model Configuration
+models:
+  prediction:
+    model_type: "xgboost"  # Options: xgboost, lightgbm, random_forest
+    prediction_horizon_days: 7
+    retrain_frequency_days: 30
+    min_samples_for_training: 100
+  
+  delay_classification:
+    threshold_hours: 24
+    confidence_threshold: 0.7
+  
+  time_series:
+    use_prophet: true
+    seasonality_mode: "multiplicative"
+
+# Service Configuration
+services:
+  total_services: 450
+  category_b_services: 305
+  poc_services: 50
+  districts: 26
+  
+  sla_categories:
+    category_a:
+      max_days: 3
+    category_b:
+      max_days: 7
+    category_c:
+      max_days: 15
+
+# Workflow Stages
+workflow_stages:
+  - name: "Application Submission"
+    code: "APPLICATION"
+    order: 1
+  - name: "VRO Review"
+    code: "VRO"
+    order: 2
+  - name: "Revenue Inspector Review"
+    code: "REVENUE_INSPECTOR"
+    order: 3
+  - name: "Tahsildar Approval"
+    code: "TAHSILDAR"
+    order: 4
+  - name: "Final Processing"
+    code: "FINAL_PROCESSING"
+    order: 5
+  - name: "Service Delivered"
+    code: "DELIVERED"
+    order: 6
+
+# Alert Configuration
+alerts:
+  enabled: true
+  delay_threshold_percentage: 20
+  prediction_confidence_threshold: 0.75
+  notification_channels:
+    - "dashboard"
+    - "api"
+
+# Dashboard Configuration
+dashboard:
+  refresh_interval_seconds: 60
+  default_date_range_days: 30
+  max_data_points: 10000
+
+# Data Processing
+data_processing:
+  batch_size: 1000
+  processing_interval_minutes: 15
+  historical_data_retention_days: 365
+
